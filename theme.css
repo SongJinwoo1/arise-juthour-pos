@@ -1,1 +1,29 @@
-hh
+/* تعريف متغيرات الألوان (CSS Variables) */
+:root[data-theme="light"] {
+    --bg-color: #f8fafc;        /* خلفية ساطعة ومريحة */
+    --text-color: #1e293b;      /* نصوص غامقة واضحة */
+    --accent-color: #0ea5e9;    /* اللون الأزرق الطبي */
+    --header-bg: #ffffff;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #0f172a;        /* خلفية داكنة فخمة (Elite Mode) */
+    --text-color: #f1f5f9;      /* نصوص فاتحة */
+    --accent-color: #38bdf8;    /* أزرق فاتح يلمع في الضلمة */
+    --header-bg: #1e293b;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* جعل الشعار SVG يأخذ لون النصوص أوتوماتيكياً */
+.app-logo {
+    color: var(--accent-color);
+}
+
+.main-header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
