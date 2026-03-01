@@ -1,0 +1,277 @@
+/* =========================================
+   1. المتغيرات والأساسيات (Variables & Base)
+   ========================================= */
+:root {
+    --primary-blue: #0056b3;
+    --light-bg: #f4f7f6;
+    --dark-bg: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-dark: #333;
+    --white: #fff;
+}
+
+/* تصفير المسافات الافتراضية وتوحيد الخط */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Tajawal', sans-serif; 
+}
+
+/* نعومة في تغيير الألوان عند التبديل بين النسخ */
+body { 
+    overflow-x: hidden; 
+    transition: background-color 0.5s ease; 
+}
+
+/* الكلاس السحري لإخفاء الأقسام غير المفعلة */
+.hidden { display: none !important; }
+
+/* تحديد طول الواجهة لتأخذ الشاشة بالكامل */
+.view { min-height: 100vh; width: 100%; }
+
+/* =========================================
+   2. النسخة العادية (Standard Edition)
+   ========================================= */
+#standard-tier { 
+    background-color: var(--light-bg); 
+    color: var(--text-dark); 
+}
+
+.std-nav { 
+    background-color: var(--primary-blue); 
+    color: var(--white); 
+    padding: 2rem; 
+    text-align: center; 
+}
+
+.std-content { 
+    max-width: 500px; 
+    margin: 3rem auto; 
+    background: var(--white); 
+    padding: 2rem; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.std-content input { 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+}
+
+.std-content button { 
+    background-color: var(--primary-blue); 
+    color: var(--white); 
+    padding: 12px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+/* =========================================
+   3. النسخة الاحترافية (Premium Edition)
+   ========================================= */
+#premium-tier { 
+    background-color: var(--dark-bg); 
+    color: var(--white); 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 2rem;
+}
+
+/* طبقة لونية فوق فيديو الخلفية لضمان وضوح النص */
+.video-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.7) 100%); 
+    z-index: 1; 
+}
+
+/* تأثير الزجاج الشفاف (Glassmorphism) */
+.glass-ui { 
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+    max-width: 800px; 
+    background: var(--glass-bg); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    border: 1px solid var(--glass-border); 
+    border-radius: 20px; 
+    padding: 2rem; 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3); 
+}
+
+.premium-nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid var(--glass-border); 
+    padding-bottom: 1rem; 
+    margin-bottom: 2rem; 
+}
+
+.premium-nav button { 
+    background: transparent; 
+    color: var(--white); 
+    border: 1px solid var(--white); 
+    padding: 8px 16px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+.premium-nav button:hover { 
+    background: var(--white); 
+    color: var(--dark-bg); 
+}
+
+/* تصميم صندوق محادثة الذكاء الاصطناعي */
+#ai-chat-box { 
+    background: rgba(0,0,0,0.3); 
+    border-radius: 12px; 
+    padding: 1rem; 
+    height: 400px; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+#display-messages { 
+    flex-grow: 1; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    padding-bottom: 10px; 
+}
+
+.chat-controls { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 10px; 
+}
+
+.chat-controls input { 
+    flex-grow: 1; 
+    padding: 12px; 
+    border-radius: 8px; 
+    border: none; 
+    outline: none; 
+    background: rgba(255,255,255,0.9); 
+    font-size: 1rem;
+}
+
+.chat-controls button { 
+    padding: 12px 24px; 
+    background: #0ea5e9; 
+    color: var(--white); 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: transform 0.2s ease;
+}
+
+.chat-controls button:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   4. لوحة الإدارة (Admin Dashboard)
+   ========================================= */
+#admin-panel { 
+    background-color: #f8fafc; 
+    color: var(--text-dark); 
+}
+
+.admin-grid { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+.side-menu { 
+    width: 250px; 
+    background: var(--dark-bg); 
+    color: var(--white); 
+    padding: 2rem; 
+}
+
+.side-menu h3 { 
+    margin-bottom: 2rem; 
+    color: #0ea5e9; 
+}
+
+.side-menu ul { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.side-menu li { 
+    padding: 10px; 
+    background: rgba(255,255,255,0.05); 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background 0.3s ease;
+}
+
+.side-menu li:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.premium-feature { 
+    border: 1px solid #10b981; 
+    color: #10b981 !important; 
+}
+
+.main-display { 
+    flex-grow: 1; 
+    padding: 3rem; 
+}
+
+/* تصميم جدول المواعيد */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 2rem; 
+    background: var(--white); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+th, td { 
+    padding: 15px; 
+    text-align: right; 
+    border-bottom: 1px solid #eee; 
+}
+
+th { 
+    background: var(--primary-blue); 
+    color: var(--white); 
+}
+
+/* =========================================
+   5. التوافق مع الشاشات (Responsive)
+   ========================================= */
+@media (max-width: 768px) {
+    .admin-grid { flex-direction: column; }
+    .side-menu { width: 100%; padding: 1rem; display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+    .side-menu ul { flex-direction: row; display: none; /* يمكن برمجتها لتفتح كقائمة منسدلة لاحقاً */ }
+    .main-display { padding: 1rem; }
+    .glass-ui { padding: 1.5rem; }
+}
