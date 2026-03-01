@@ -1,90 +1,48 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html dir="rtl" lang="ar" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حلول هادئة | Calm Solutions Elite</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
 
-    <main id="app-container">
-        <section id="standard-tier" class="view hidden">
-            <div class="std-card">
-                <h1>حلول هادئة 🌿</h1>
-                <p>نظام الحجز التقليدي</p>
-                <div class="form-group">
-                    <input type="text" id="std-name" placeholder="الاسم بالكامل">
-                    <input type="tel" id="std-phone" placeholder="رقم الهاتف">
-                    <select id="std-clinic">
-                        <option value="">اختر القسم...</option>
-                        <option value="أسنان">عيادة الأسنان</option>
-                        <option value="جلدية">عيادة الجلدية</option>
-                    </select>
-                    <button onclick="submitStandard()">تأكيد الحجز</button>
-                </div>
+    <main id="main-app">
+        
+        <header class="main-header">
+            <div class="logo-wrapper">
+                <svg class="app-logo" viewBox="0 0 100 100" width="50" height="50">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M70 30 A 25 25 0 1 0 70 70" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                    <rect x="47" y="38" width="6" height="24" fill="currentColor" rx="2" />
+                    <rect x="38" y="47" width="24" height="6" fill="currentColor" rx="2" />
+                </svg>
+                <span class="brand-name">حلول هادئة</span>
             </div>
+            
+            <div class="header-actions">
+                <button id="theme-toggler" title="تبديل الوضع">🌓</button>
+                <button id="admin-login-btn" class="hidden">لوحة الإدارة 🔒</button>
+            </div>
+        </header>
+
+        <section id="render-area">
+            <div id="loader" class="loader">جاري تجهيز بيئة العمل...</div>
         </section>
 
-        <section id="premium-tier" class="view hidden">
-            <div class="video-overlay"></div>
-            <div class="glass-container">
-                <header class="premium-header">
-                    <div class="logo-area">
-                        <span class="status-dot"></span>
-                        <h2>Calm Elite ✨</h2>
-                    </div>
-                    <button id="admin-trigger" class="admin-btn">لوحة التحكم 🔐</button>
-                </header>
-
-                <div id="chat-window">
-                    <div id="display-messages"></div>
-                    <div class="chat-input-wrapper">
-                        <input type="text" id="ai-input" placeholder="تحدث مع المساعد الذكي...">
-                        <button id="send-btn">إرسال</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="admin-panel" class="view hidden">
-            <div class="admin-layout">
-                <aside class="sidebar">
-                    <div class="sidebar-brand">لوحة الطبيب</div>
-                    <nav>
-                        <button onclick="location.reload()">الرئيسية</button>
-                        <button class="export-btn" id="export-csv">تصدير Excel 📊</button>
-                    </nav>
-                </aside>
-                <div class="content-area">
-                    <div class="stats-grid">
-                        <div class="stat-card">إجمالي الحجوزات: <span id="total-count">0</span></div>
-                        <div class="stat-card urgent">حالات الطوارئ: <span id="urgent-count">0</span></div>
-                    </div>
-                    
-                    <h2>قائمة المواعيد (Alt+H للإخفاء السريع)</h2>
-                    <div class="table-responsive">
-                        <table id="data-table">
-                            <thead>
-                                <tr>
-                                    <th>اسم المريض</th>
-                                    <th>رقم الهاتف</th>
-                                    <th>التخصص</th>
-                                    <th>الأولوية</th>
-                                    <th>التاريخ والوقت</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table-body">
-                                </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="core.js"></script>
+    <script src="security.js"></script>
+    <script src="ui-effects.js"></script>
+    <script src="ai-bot.js"></script>
+    <script src="admin-ui.js"></script>
 </body>
 </html>
