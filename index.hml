@@ -1,0 +1,22 @@
+        
+        try {
+            await db.collection("sales").add({
+                item: item,
+                price: price,
+                time: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            log.innerHTML = `<span class="success-anim">✅ تم تسجيل بيع (${item}) بقيمة ${price} د.ك</span>`;
+        } catch (e) {
+            log.innerHTML = "❌ خطأ في الاتصال بالسيرفر";
+        }
+    }
+
+    function customSale() {
+        let n = prompt("اسم المنتج:");
+        let p = prompt("السعر بالدينار:");
+        if(n && p) saveSale(n, parseFloat(p));
+    }
+</script>
+
+</body>
+</html>
